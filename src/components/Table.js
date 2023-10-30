@@ -2,132 +2,131 @@ import React from "react";
 import Completed from "./Status/Completed";
 import Pending from "./Status/Pending";
 import Progress from "./Status/Progress";
+import style from "../css/Table.module.css";
 
 const Table = () => {
     return (
-      <table style={{width: "100%", paddingRight: "6%", paddingLeft: "6%", fontSize: "12px"}}>
-        <thead>
-            <th style={{display: "flex", justifyContent: "center", alignItems: "center", backgroundColor: "#374151", borderRadius: "10px 10px 0 0", paddingTop: "15px", paddingBottom: "15px"}}>
-                <td style={{flex: "0.2"}}>
+      <table>
+        <tbody>
+            <th className={style.top_th}>
+                <td className={style.td_flex}>
                     ID
                 </td>
-                <td style={{flex: "0.2"}}>
+                <td className={style.td_flex} >
                     USERNAME
                 </td>
-                <td style={{flex: "0.2"}}>
+                <td className={style.td_flex}>
                     DATE & TIME
                 </td>
-                <td style={{flex: "0.2"}}>
+                <td className={style.td_flex}>
                     AMOUNT
                 </td>
-                <td style={{flex: "0.2"}}>
+                <td className={style.td_flex}>
                     STATUS
                 </td>
             </th>
-        </thead>
-        <tbody>
-            <th style={{display: "flex", justifyContent: "center", alignItems: "center", backgroundColor: "#1f2a37"}}>
-                <td style={{flex: "0.2"}}>
-                    12312
+            <tr>
+                <td className={style.td_flex}>
+                    <p>12312</p>
                 </td>
-                <td style={{flex: "0.2"}}>
+                <td className={style.td_flex}>
                     FEDERICOSCHI
                 </td >
-                <td style={{flex: "0.2", color: "gray"}}>
+                <td className={style.td_gray}>
                     May 20, 2023 10:34:12
                 </td>
-                <td style={{flex: "0.2"}}>
+                <td className={style.td_flex}>
                     120€
                 </td>
-                <td style={{flex: "0.2"}}>
+                <td className={style.td_flex}>
                     <Completed />
                 </td>
-            </th>
-            <th style={{display: "flex", justifyContent: "center", alignItems: "center", backgroundColor: "#1f2a37"}}>
-                <td style={{flex: "0.2"}}>
+            </tr>
+            <tr>
+                <td className={style.td_flex}>
                     12311
                 </td>
-                <td style={{flex: "0.2"}}>
+                <td className={style.td_flex}>
                     Feryzz
                 </td >
-                <td style={{flex: "0.2", color: "gray"}}>
+                <td className={style.td_gray}>
                     May 20, 2023 09:12:43
                 </td>
-                <td style={{flex: "0.2"}}>
+                <td className={style.td_flex}>
                     15€
                 </td>
-                <td style={{flex: "0.2"}}>
+                <td className={style.td_flex}>
                     <Completed />
                 </td>
-            </th>
-            <th style={{display: "flex", justifyContent: "center", alignItems: "center", backgroundColor: "#1f2a37"}}>
-                <td style={{flex: "0.2"}}>
+            </tr>
+            <tr>
+                <td className={style.td_flex}>
                     12310
                 </td>
-                <td style={{flex: "0.2"}}>
+                <td className={style.td_flex}>
                     Cinquanta
                 </td >
-                <td style={{flex: "0.2", color: "gray"}}>
+                <td className={style.td_gray}>
                     May 20, 2023 04:44.02
                 </td>
-                <td style={{flex: "0.2"}}>
+                <td className={style.td_flex}>
                     27€
                 </td>
-                <td style={{flex: "0.2"}}>
+                <td className={style.td_flex}>
                     <Pending />
                 </td>
-            </th>
-            <th style={{display: "flex", justifyContent: "center", alignItems: "center", backgroundColor: "#1f2a37"}}>
-                <td style={{flex: "0.2"}}>
+            </tr>
+            <tr>
+                <td className={style.td_flex}>
                     12309
                 </td>
-                <td style={{flex: "0.2"}}>
+                <td className={style.td_flex}>
                     NotAffected
                 </td >
-                <td style={{flex: "0.2", color: "gray"}}>
+                <td className={style.td_gray}>
                     May 19, 2023 23:57:52
                 </td>
-                <td style={{flex: "0.2"}}>
+                <td className={style.td_flex}>
                     59€
                 </td>
-                <td style={{flex: "0.2"}}>
+                <td className={style.td_flex}>
                     <Progress />
                 </td>
-            </th>
-            <th style={{display: "flex", justifyContent: "center", alignItems: "center", backgroundColor: "#1f2a37"}}>
-                <td style={{flex: "0.2"}}>
+            </tr>
+            <tr>
+                <td className={style.td_flex}>
                     12308
                 </td>
-                <td style={{flex: "0.2"}}>
+                <td className={style.td_flex}>
                     Ytnoos
                 </td >
-                <td style={{flex: "0.2", color: "gray"}}>
+                <td className={style.td_gray}>
                     May 19, 2023 23:30:59
                 </td>
-                <td style={{flex: "0.2"}}>
+                <td className={style.td_flex}>
                     12€
                 </td>
-                <td style={{flex: "0.2"}}>
+                <td className={style.td_flex}>
                     <Completed />
                 </td>
-            </th>
-            <th style={{display: "flex", justifyContent: "center", alignItems: "center", backgroundColor: "#1f2a37", borderRadius: "0 0 10px 10px"}}>
-                <td style={{flex: "0.2"}}>
+            </tr>
+            <tr style={{borderRadius: "0 0 10px 10px"}}>
+                <td className={style.td_flex}>
                     12307
                 </td>
-                <td style={{flex: "0.2"}}>
+                <td className={style.td_flex}>
                     MattiaB22
                 </td >
-                <td style={{flex: "0.2", color: "gray"}}>
+                <td className={style.td_gray}>
                     May 19, 2023 22:19:27
                 </td>
-                <td style={{flex: "0.2"}}>
+                <td className={style.td_flex}>
                     33€
                 </td>
-                <td style={{flex: "0.2"}}>
+                <td className={style.td_flex}>
                     <Completed />
                 </td>
-            </th>
+            </tr>
         </tbody>
       </table>
     );

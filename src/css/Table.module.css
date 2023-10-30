@@ -1,0 +1,31 @@
+table{
+    width: 100%;
+    padding-right: 6%;
+    padding-left: 6%;
+    font-size: 12px;
+}
+
+.top_th{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-color: #374151;
+    border-radius: 10px 10px 0 0;
+    padding: 15px 0;
+}
+
+.td_flex{
+    flex: 0.2;
+}
+
+.td_gray{
+    flex: 0.2;
+    color: gray;
+}
+
+tr{
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    background-color: #1f2a37;
+}
