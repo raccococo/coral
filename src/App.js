@@ -19,7 +19,16 @@ function App() {
                 <Four_Blocks />
               </div>
               <div style={{ flex: "2.5", color: "white"}}>
-                <Table />
+                <Table
+                  products={[
+                    { id: 12312, username: "FEDERICOSCHI", dateAndTime: "1684571652000", amount: 120, status: 1 },
+                    { id: 12311, username: "Feryzz", dateAndTime: "1684566763000", amount: 15, status: 1 },
+                    { id: 12310, username: "Cinquanta", dateAndTime: "1684550642000", amount: 27, status: 2 },
+                    { id: 12309, username: "NotAffected", dateAndTime: "1684533472000", amount: 59, status: 3 },
+                    { id: 12308, username: "Ytnoos", dateAndTime: "1684531859000", amount: 12, status: 1 },
+                    { id: 12307, username: "MattiaB22", dateAndTime: "1684527567000", amount: 33, status: 1 },
+                  ]}
+                />
               </div>
               <div style={{ flex: "5", color: "white"}}>
                 <Users />

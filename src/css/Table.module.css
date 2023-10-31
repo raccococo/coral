@@ -5,7 +5,7 @@ table{
     font-size: 12px;
 }
 
-.top_th{
+.top_tr{
     display: flex;
     justify-content: center;
     align-items: center; 
@@ -14,13 +14,26 @@ table{
     padding: 15px 0;
 }
 
-.td_flex{
+.flex{
     flex: 0.2;
+    display: flex;
+    justify-content: left;
 }
 
-.td_gray{
+.flex_id{
+    flex: 0.2;
+    display: flex;
+    justify-content: left;
+    padding-left: 20px;
+}
+
+.th_gray{
     flex: 0.2;
     color: gray;
+}
+
+.border_tr{
+    border: solid #242f3d 1px;
 }
 
 tr{

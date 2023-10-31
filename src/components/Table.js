@@ -1,136 +1,93 @@
-import React from "react";
+import React, {useState, useRef} from "react";
 import Completed from "./Status/Completed";
 import Pending from "./Status/Pending";
 import Progress from "./Status/Progress";
 import style from "../css/Table.module.css";
 
-const Table = () => {
+const useSortableData = (items, config = null) => {
+    const [sortConfig, setSortConfig] = React.useState(config);
+  
+    const sortedItems = React.useMemo(() => {
+      let sortableItems = [...items];
+      if (sortConfig !== null) {
+        sortableItems.sort((a, b) => {
+          if (a[sortConfig.key] < b[sortConfig.key]) {
+            return sortConfig.direction === 'ascending' ? -1 : 1;
+          }
+          if (a[sortConfig.key] > b[sortConfig.key]) {
+            return sortConfig.direction === 'ascending' ? 1 : -1;
+          }
+          return 0;
+        });
+      }
+      return sortableItems;
+    }, [items, sortConfig]);
+  
+    const requestSort = (key) => {
+      let direction = 'ascending';
+      if (
+        sortConfig &&
+        sortConfig.key === key &&
+        sortConfig.direction === 'ascending'
+      ) {
+        direction = 'descending';
+      }
+      setSortConfig({ key, direction });
+    };
+  
+    return { items: sortedItems, requestSort, sortConfig };
+};
+  
+const Table = (props) => {
+    const { items, requestSort, sortConfig } = useSortableData(props.products);
+    const getClassNamesFor = (name) => {
+        if (!sortConfig) {
+          return;
+        }
+        return sortConfig.key === name ? sortConfig.direction : undefined;
+    };
+
+    const formattedDates = items.map(item => {
+        const formattedDate = Intl.DateTimeFormat('it-IT', {
+          day: '2-digit',
+          month: '2-digit',
+          year: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+        }).format(item.dateAndTime);
+        const statusIcon = item.status === 1 ? <Completed /> : item.status === 2 ? <Pending /> : <Progress />;
+        return { ...item, formattedDate, statusIcon };
+    });
+
+    
+    
     return (
-      <table>
-        <tbody>
-            <th className={style.top_th}>
-                <td className={style.td_flex}>
-                    ID
-                </td>
-                <td className={style.td_flex} >
-                    USERNAME
-                </td>
-                <td className={style.td_flex}>
-                    DATE & TIME
-                </td>
-                <td className={style.td_flex}>
-                    AMOUNT
-                </td>
-                <td className={style.td_flex}>
-                    STATUS
-                </td>
-            </th>
-            <tr>
-                <td className={style.td_flex}>
-                    <p>12312</p>
-                </td>
-                <td className={style.td_flex}>
-                    FEDERICOSCHI
-                </td >
-                <td className={style.td_gray}>
-                    May 20, 2023 10:34:12
-                </td>
-                <td className={style.td_flex}>
-                    120€
-                </td>
-                <td className={style.td_flex}>
-                    <Completed />
-                </td>
-            </tr>
-            <tr>
-                <td className={style.td_flex}>
-                    12311
-                </td>
-                <td className={style.td_flex}>
-                    Feryzz
-                </td >
-                <td className={style.td_gray}>
-                    May 20, 2023 09:12:43
-                </td>
-                <td className={style.td_flex}>
-                    15€
-                </td>
-                <td className={style.td_flex}>
-                    <Completed />
-                </td>
-            </tr>
-            <tr>
-                <td className={style.td_flex}>
-                    12310
-                </td>
-                <td className={style.td_flex}>
-                    Cinquanta
-                </td >
-                <td className={style.td_gray}>
-                    May 20, 2023 04:44.02
-                </td>
-                <td className={style.td_flex}>
-                    27€
-                </td>
-                <td className={style.td_flex}>
-                    <Pending />
-                </td>
-            </tr>
-            <tr>
-                <td className={style.td_flex}>
-                    12309
-                </td>
-                <td className={style.td_flex}>
-                    NotAffected
-                </td >
-                <td className={style.td_gray}>
-                    May 19, 2023 23:57:52
-                </td>
-                <td className={style.td_flex}>
-                    59€
-                </td>
-                <td className={style.td_flex}>
-                    <Progress />
-                </td>
-            </tr>
-            <tr>
-                <td className={style.td_flex}>
-                    12308
-                </td>
-                <td className={style.td_flex}>
-                    Ytnoos
-                </td >
-                <td className={style.td_gray}>
-                    May 19, 2023 23:30:59
-                </td>
-                <td className={style.td_flex}>
-                    12€
-                </td>
-                <td className={style.td_flex}>
-                    <Completed />
-                </td>
-            </tr>
-            <tr style={{borderRadius: "0 0 10px 10px"}}>
-                <td className={style.td_flex}>
-                    12307
-                </td>
-                <td className={style.td_flex}>
-                    MattiaB22
-                </td >
-                <td className={style.td_gray}>
-                    May 19, 2023 22:19:27
-                </td>
-                <td className={style.td_flex}>
-                    33€
-                </td>
-                <td className={style.td_flex}>
-                    <Completed />
-                </td>
-            </tr>
-        </tbody>
-      </table>
+        <table>
+            <thead>
+                <tr className={style.top_tr}>
+                    <th className={style.flex_id}><button type="button" onClick={() => requestSort('id')} className={getClassNamesFor('ID')}>ID</button></th>
+                    <th className={style.flex}><button type="button" onClick={() => requestSort('username')} className={getClassNamesFor('username')}>USERNAME</button></th>
+                    <th className={style.flex}><button type="button" onClick={() => requestSort('dateAndTime')} className={getClassNamesFor('DateAndTime')}>DATE & TIME</button></th>
+                    <th className={style.flex}><button type="button" onClick={() => requestSort('amount')} className={getClassNamesFor('amount')}>AMOUNT</button></th>
+                    <th className={style.flex}><button type="button" onClick={() => requestSort('status')} className={getClassNamesFor('status')}>STATUS</button></th>
+                </tr>
+            </thead>
+            <tbody>
+                {formattedDates.map((item) => (
+                <tr className={style.border_tr} key={item.id}>
+                    <td className={style.flex_id}>{item.id}</td>
+                    <td className={style.flex}>{item.username}</td>
+                    <td className={style.th_gray}>{item.formattedDate}</td>
+                    <td className={style.flex}>{item.amount}€</td>
+                    <td className={style.flex}>{item.statusIcon}</td>
+                </tr>
+                ))}
+            </tbody>
+        </table>
     );
-  };
+};
   
 export default Table;
+  
   
