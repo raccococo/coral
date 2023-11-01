@@ -42,3 +42,16 @@ tr{
     align-items: center;
     background-color: #1f2a37;
 }
+
+.filter{
+    border: 0;
+    border-style: none;
+    transition: none;
+    color: white;
+    background-color: transparent;
+}
+
+.filter:hover{
+    border-radius: 5px;
+    background-color: #242f3d;
+}

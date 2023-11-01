@@ -1,0 +1,99 @@
+.div_container{
+    flex-grow: 0.15;
+    color: white;
+    height: 100vh;
+}
+
+ul{
+    background-color: rgb(31, 42, 55);
+    height: 95vh;
+    width: 100%;
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.control_panel{
+    border-radius: 10px;
+    background-color: #374151;
+    margin-bottom: 10px;
+    max-height: 50px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.other{
+    max-height: 50px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+span{
+    padding-bottom: 15%;
+    padding-top: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+img{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.other img{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.other :hover{
+    background-color: #374151;
+    border-radius: 10px;
+}
+
+.settings_menu img{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+.settings_menu :hover {
+    background-color: #374151;
+    border-radius: 10px;
+}
+
+.dropdown {
+    max-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dropdown p {
+    cursor: pointer;
+}
+
+.dropdown object {
+    padding-right: 20px;
+    width: 16px;
+    height: 16px;
+    fill: #ccc;
+}
+
+.dropdown_menu p{
+    padding-left: 45px;
+    font-size: 14px;
+}
+
+hr{
+    background-color: #374151;
+    border: none;
+    height: 1px;
+}

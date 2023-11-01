@@ -1,0 +1,41 @@
+.background{
+  background-color: #111827;
+  width: 100vw;
+  height: 100vh; 
+  font-family: Sans-serif;
+}
+
+.side_navbar_flex{
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+
+.right_block{
+  flex-grow: 0.92;
+}
+
+.flex_right_block{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.flex_link{
+  flex: 0.8;
+}
+
+.flex_four_blocks{
+  flex: 1.5; 
+  color: white;
+}
+
+.flex_table{
+  flex: 2.5;
+  color: white;
+}
+
+.flex_users{
+  flex: 5;
+  color: white;
+}

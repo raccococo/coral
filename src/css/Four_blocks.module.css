@@ -1,0 +1,45 @@
+.container{
+    display: flex;
+    color: white; 
+    justify-content: flex-start;
+}
+
+.staff_users_icon_div{
+    display: flex;
+    align-items: center;
+}
+
+.container_title{
+    font-size: 18px;
+    padding-left: 20px;
+}
+
+.other_container_div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0.18; 
+    justify-content: center;
+    background-color: #1f2a37; 
+    margin-left: 100px;
+    border-radius: 10px;
+}
+
+.first_p_value{
+    font-size: 24px;
+    margin: auto;
+    padding-bottom: 15px;
+}
+
+.p_value{
+    font-size: 24px;
+    margin: auto;
+}
+
+.little_gray_words{
+    margin: auto;
+    font-size: 12px;
+    padding-bottom: 15px;
+    color: #575f6c;
+
+}

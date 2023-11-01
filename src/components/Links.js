@@ -1,15 +1,16 @@
 import React from "react";
+import style from "../css/Links.module.css";
 
 const Link = () => {
     return (
-      <div style={{display: "flex", alignItems: "center", backgroundColor: "#1f2a37", borderRadius: "10px", color: "#575f6c", marginLeft: "6%", marginRight: "77%", marginTop: "20px", fontSize: "12px"}}>
-        <div style={{paddingLeft: "20px"}}>
+      <div className={style.div_container} >
+        <div className={style.icons_padding}>
           <img src={require("../icons/home.png")}></img>
         </div>
-        <div style={{marginLeft: "10px"}}>
+        <div className={style.margin_left}>
           <p>Control Panel</p>
         </div>
-        <div style={{marginLeft: "10px", marginRight: "10px"}}>
+        <div className={style.margin_left_right}>
           <p>{"   >   "}</p>
         </div>
         <div>

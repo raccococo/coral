@@ -40,12 +40,6 @@ const useSortableData = (items, config = null) => {
   
 const Table = (props) => {
     const { items, requestSort, sortConfig } = useSortableData(props.products);
-    const getClassNamesFor = (name) => {
-        if (!sortConfig) {
-          return;
-        }
-        return sortConfig.key === name ? sortConfig.direction : undefined;
-    };
 
     const formattedDates = items.map(item => {
         const formattedDate = Intl.DateTimeFormat('it-IT', {
@@ -66,11 +60,11 @@ const Table = (props) => {
         <table>
             <thead>
                 <tr className={style.top_tr}>
-                    <th className={style.flex_id}><button type="button" onClick={() => requestSort('id')} className={getClassNamesFor('ID')}>ID</button></th>
-                    <th className={style.flex}><button type="button" onClick={() => requestSort('username')} className={getClassNamesFor('username')}>USERNAME</button></th>
-                    <th className={style.flex}><button type="button" onClick={() => requestSort('dateAndTime')} className={getClassNamesFor('DateAndTime')}>DATE & TIME</button></th>
-                    <th className={style.flex}><button type="button" onClick={() => requestSort('amount')} className={getClassNamesFor('amount')}>AMOUNT</button></th>
-                    <th className={style.flex}><button type="button" onClick={() => requestSort('status')} className={getClassNamesFor('status')}>STATUS</button></th>
+                    <th className={style.flex_id}><button onClick={() => requestSort('id')} className={style.filter}>ID</button></th>
+                    <th className={style.flex}><button onClick={() => requestSort('username')} className={style.filter}>USERNAME</button></th>
+                    <th className={style.flex}><button onClick={() => requestSort('dateAndTime')} className={style.filter}>DATE & TIME</button></th>
+                    <th className={style.flex}><button onClick={() => requestSort('amount')} className={style.filter}>AMOUNT</button></th>
+                    <th className={style.flex}><button onClick={() => requestSort('status')} className={style.filter}>STATUS</button></th>
                 </tr>
             </thead>
             <tbody>

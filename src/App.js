@@ -4,21 +4,22 @@ import Link from "./components/Links";
 import Four_Blocks from "./components/Four_Blocks";
 import Table from "./components/Table";
 import Users from "./components/Users";
+import style_app from "./App.module.css";
 
 function App() {
   return (
-    <div style={{backgroundColor: "#111827", width: "100vw", height: "100vh", fontFamily: "Sans-serif"}}>
-        <div style={{ display: "flex", flexDirection: "row", flexGrow: 1 }}>
+    <div className={style_app.background}>
+        <div className={style_app.side_navbar_flex}>
           <Side_NavBar />
-          <div style={{ flexGrow: 0.92 }}>
-            <div style={{ display: "flex", flexDirection: "column", height: "100%"}}>
-              <div style={{ flex: "0.8"}}>
+          <div className={style_app.right_block}>
+            <div className={style_app.flex_right_block}>
+              <div className={style_app.flex_link}>
                 <Link />
               </div>
-              <div style={{ flex: "1.5", color: "white"}}>
+              <div className={style_app.flex_four_blocks}>
                 <Four_Blocks />
               </div>
-              <div style={{ flex: "2.5", color: "white"}}>
+              <div className={style_app.flex_table}>
                 <Table
                   products={[
                     { id: 12312, username: "FEDERICOSCHI", dateAndTime: "1684571652000", amount: 120, status: 1 },
@@ -30,7 +31,7 @@ function App() {
                   ]}
                 />
               </div>
-              <div style={{ flex: "5", color: "white"}}>
+              <div className={style_app.flex_users}>
                 <Users />
               </div>
             </div>

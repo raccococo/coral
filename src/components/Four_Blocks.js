@@ -1,51 +1,52 @@
 import React from "react";
+import style from "../css/Four_blocks.module.css";
 
 const Four_Blocks = () => {
     return (
-      <div style={{display: "flex", color: "white", justifyContent: "center"}}>
-        <div style={{display: "flex",flexDirection:"column", alignItems: "center", flex: "0.18", justifyContent: "center", backgroundColor: "#1f2a37", borderRadius: "10px"}}>
-            <div style={{display: "flex", alignItems: "center"}}>
+      <div className={style.container}>
+        <div className={style.other_container_div}>
+            <div className={style.staff_users_icon_div}>
                 <img src={require("../icons/persone.png")}></img>
-                <p style={{fontSize: "18px", paddingLeft: "20px"}}>Staff Users</p>
+                <p className={style.container_title}>Staff Users</p>
             </div>
             <div>
-                <p style={{fontSize: "24px", margin: "auto", paddingBottom: "15px"}}>14</p>
+                <p className={style.first_p_value}>14</p>
             </div>
         </div>
-        <div style={{display: "flex",flexDirection:"column", alignItems: "center", flex: "0.18", justifyContent: "center", backgroundColor: "#1f2a37", marginLeft: "100px", borderRadius: "10px"}}>
+        <div className={style.other_container_div}>
             <div style={{display: "flex", alignItems: "center"}}>
                 <img src={require("../icons/money.png")}></img>
-                <p style={{fontSize: "18px", paddingLeft: "20px"}}>Total in Sales</p>
+                <p className={style.container_title}>Total in Sales</p>
             </div>
             <div>
-                <p style={{fontSize: "24px", margin: "auto"}}>200.000 EUR</p>
+                <p className={style.p_value}>200.000 EUR</p>
             </div>
             <div>
-                <p style={{fontSize: "12px", margin: "auto", paddingBottom: "15px", color: "#575f6c"}}>All Time</p>
+                <p className={style.little_gray_words}>All Time</p>
             </div>
         </div>
-        <div style={{display: "flex",flexDirection:"column", alignItems: "center", flex: "0.18", justifyContent: "center", backgroundColor: "#1f2a37", marginLeft: "100px", borderRadius: "10px"}}>
+        <div className={style.other_container_div}>
             <div style={{display: "flex", alignItems: "center"}}>
                 <img src={require("../icons/calendar.png")}></img>
-                <p style={{fontSize: "18px", paddingLeft: "20px"}}>Total in Sales</p>
+                <p className={style.container_title}>Total in Sales</p>
             </div>
             <div>
-                <p style={{fontSize: "24px", margin: "auto"}}>200.000 EUR</p>
+                <p className={style.p_value}>200.000 EUR</p>
             </div>
             <div>
-                <p style={{fontSize: "12px", margin: "auto", paddingBottom: "15px", color: "#575f6c"}}>Current Month</p>
+                <p className={style.little_gray_words}>Current Month</p>
             </div>
         </div>
-        <div style={{display: "flex",flexDirection:"column", alignItems: "center", flex: "0.20", justifyContent: "center", backgroundColor: "#1f2a37", marginLeft: "100px", borderRadius: "10px"}}>
+        <div className={style.other_container_div}>
             <div style={{display: "flex", alignItems: "center"}}>
                 <img src={require("../icons/back.png")}></img>
-                <p style={{fontSize: "18px", paddingLeft: "20px"}}>Avarage Payment</p>
+                <p className={style.container_title}>Avarage Payment</p>
             </div>
             <div>
-                <p style={{fontSize: "24px", margin: "auto"}}>13 EUR</p>
+                <p className={style.p_value}>13 EUR</p>
             </div>
             <div>
-                <p style={{fontSize: "12px", margin: "auto", paddingBottom: "15px", color: "#575f6c"}}>Current Month</p>
+                <p className={style.little_gray_words}>Current Month</p>
             </div>
         </div>
       </div>

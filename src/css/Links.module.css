@@ -1,0 +1,24 @@
+.div_container{
+    display: flex;
+    align-items: center;
+    background-color: #1f2a37;
+    border-radius: 10px;
+    color: #575f6c;
+    margin-left: 6%;
+    margin-right: 77%;
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+.icons_padding{
+    padding-left: 30px;
+}
+
+.margin_left{
+    margin-left: 10px;
+}
+
+.margin_left_right{
+    margin-left: 10px;
+    margin-right: 10px;
+}
